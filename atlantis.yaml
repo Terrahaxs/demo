@@ -1,0 +1,18 @@
+version: 3
+automerge: true
+defaults:
+  workflow: myworkflow
+  roles:
+    aws: arn:aws:iam::530084066544:role/terrahaxs-worker
+projects:
+- dir: gh_dir.*
+workflows:
+  myworkflow:
+    plan:
+      steps:
+      - init
+      - plan
+    apply:
+      steps:
+      - init
+      - apply
