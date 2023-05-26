@@ -24,11 +24,11 @@ module "dynamic_subnets" {
   ipv4_cidr_block         = ["10.0.0.0/16"]
 }
 
-resource "aws_s3_bucket" "myfirstbucket" {
-  bucket_prefix = "demo-123451234512345"
+# resource "aws_s3_bucket" "myfirstbucket" {
+#   bucket_prefix = "demo-123451234512345"
 
-  tags = {
-        "Environment" = "prod",
-        "ManagedBy" = "Terraform",
-    }
-}
+#   tags = {
+#         "Environment" = "prod",
+#         "ManagedBy" = "Terraform",
+#     }
+# }

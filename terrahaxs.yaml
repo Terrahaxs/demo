@@ -6,6 +6,7 @@ defaults:
     aws: arn:aws:iam::530084066544:role/terrahaxs-worker
 projects:
 - dir: gh_dir.*
+  apply_requirements: [mergeable, approved]
 workflows:
   myworkflow:
     plan:
