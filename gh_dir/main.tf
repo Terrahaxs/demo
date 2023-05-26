@@ -27,5 +27,8 @@ module "dynamic_subnets" {
 resource "aws_s3_bucket" "myfirstbucket" {
   bucket_prefix = "demo-123451234512345"
 
-  tags = module.tags.tags
+  tags = {
+        "Environment" = "prod",
+        "ManagedBy" = "Terraform",
+    }
 }
