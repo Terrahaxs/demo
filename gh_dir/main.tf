@@ -23,3 +23,9 @@ module "dynamic_subnets" {
   igw_id             = [module.vpc.igw_id]
   ipv4_cidr_block         = ["10.0.0.0/16"]
 }
+
+resource "aws_s3_bucket" "myfirstbucket" {
+  bucket_prefix = "demo-123451234512345"
+
+  tags = module.tags.tags
+}
