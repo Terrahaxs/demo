@@ -2,7 +2,7 @@ version: 3
 defaults:
   workflow: myworkflow
   roles:
-    aws: arn:aws:iam::809929912595:role/demo-terrahaxs-worker
+    aws: arn:aws:iam::809929912595:role/demo-terrahaxs-amazing-worker
 projects: 
   - dir: gh_dir.*
     apply_requirements: [ mergeable, approved ]
