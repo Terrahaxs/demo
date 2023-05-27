@@ -5,7 +5,7 @@ defaults:
     aws: arn:aws:iam::809929912595:role/demo-terrahaxs-amazing-worker
 projects:
   - dir: gh_dir.*
-    apply_requirements: [ mergable, approved ]
+    apply_requirements: [ mergable ]
 workflow:
   myworkflow:
     plan: 
@@ -16,4 +16,3 @@ workflow:
       steps: 
       - init
       - apply 
-      
