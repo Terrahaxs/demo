@@ -1,34 +1,8 @@
-module "vpc" {
-  source = "cloudposse/vpc/aws"
-  # Cloud Posse recommends pinning every module to a specific version
-  # version     = "x.x.x"
-  namespace = "eg"
-  stage     = "test"
-  name      = "app"
+resource "aws_s3_bucket" "myfirstbucket" {
+  bucket_prefix = "demo-terrahaxs-5-27-23_1"
 
-  ipv4_primary_cidr_block = "10.0.0.0/16"
-
-  assign_generated_ipv6_cidr_block = false
+  tags = {
+        "Environment" = "staging",
+        "ManagedBy" = "Terraform",
+    }
 }
-
-module "dynamic_subnets" {
-  source = "cloudposse/dynamic-subnets/aws"
-  # Cloud Posse recommends pinning every module to a specific version
-  # version     = "x.x.x"
-  namespace          = "eg"
-  stage              = "test"
-  name               = "app"
-  availability_zones = ["us-west-2a","us-west-2b","us-west-2c"]
-  vpc_id             = module.vpc.vpc_id
-  igw_id             = [module.vpc.igw_id]
-  ipv4_cidr_block         = ["10.0.0.0/16"]
-}
-
-# resource "aws_s3_bucket" "myfirstbucket" {
-#   bucket_prefix = "demo-123451234512345"
-
-#   tags = {
-#         "Environment" = "prod",
-#         "ManagedBy" = "Terraform",
-#     }
-# }
